@@ -16,4 +16,4 @@ cat > ".profile.d/bun.sh" <<SH
 echo "export PATH=\$BUN_INSTALL/bin:\$PATH"
 SH
 
-source ".profile.d/php.sh"
+source ".profile.d/bun.sh"
