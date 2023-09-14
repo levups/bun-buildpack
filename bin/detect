@@ -1,4 +1,10 @@
 #!/bin/bash
 
-echo "Bun"
-exit 0
+BUILD_DIR=$1
+
+if [ -f $1/bun.lockb ]; then
+  echo "Bun"
+  exit 0
+else
+  exit 1
+fi
