@@ -19,4 +19,5 @@ EOF
 echo "-----> Testing bun"
 source $BUILD_DIR/.profile.d/001_bun.sh
 command -v bun
+ls -l $BUILD_DIR/bun.lockb
 bun install
