@@ -38,14 +38,3 @@ finished
 export BUN_INSTALL="$HOME/.bun" 
 export PATH="$BUN_INSTALL/bin:$PATH"
 write_profile_d_script
-
-# Build the project
-cd $BUILD_DIR
-
-start "Installing Dependencies"
-  bun install
-finished
-
-start "building the app"
-  bun run -b build
-finished
