@@ -18,4 +18,5 @@ EOF
 
 echo "-----> Testing bun"
 source $BUILD_DIR/.profile.d/001_bun.sh
+command -v bun
 bun --version
