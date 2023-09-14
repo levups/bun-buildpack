@@ -1,8 +1,4 @@
 #!/bin/bash
 
-if [ -f $1/bun.lockb ]; then
-  echo "Bun"
-  exit 0
-else
-  exit 1
-fi
+echo "Bun"
+exit 0
