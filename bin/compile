@@ -14,5 +14,5 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/001_bun.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$BUN_INSTALL/bin:\$PATH"' >> $PROFILE_PATH
 
-cd $BUILD_DIR/app/bin
+cd $BUILD_DIR/bin
 ln -s $BUN_INSTALL/bin/bun .
