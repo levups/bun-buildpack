@@ -7,13 +7,10 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 echo "-----> Installing Bun"
+export BUN_INSTALL=$HOME/.bun
 curl -fsSL https://bun.sh/install | bash
 
 echo "-----> Exporting profile environment"
 mkdir -p $BUILD_DIR/.profile.d
-cat <<EOF >$BUILD_DIR/.profile.d/001_bun.sh
-export BUN_INSTALL="\$HOME/.bun" 
-export PATH="\$BUN_INSTALL/bin:\$PATH"
-EOF
-
-source $BUILD_DIR/.profile.d/001_bun.sh 
+echo "export BUN_INSTALL=\$HOME/.bun" >> $BUILD_DIR/.profile.d/bun_buildpack.sh
+echo "export PATH=\$BUN_INSTALL/bin:\$PATH" >> $BUILD_DIR/.profile.d/bun_buildpack.sh
