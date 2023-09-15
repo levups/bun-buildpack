@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e -o pipefail
-
 BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
@@ -14,8 +12,10 @@ echo "-----> Exporting profile environment"
 command -v bun
 
 mkdir -p $BUILD_DIR/.profile.d
-echo "export BUN_INSTALL=\$HOME/.bun" >> $BUILD_DIR/.profile.d/bun_buildpack.sh
-echo "export PATH=\$BUN_INSTALL/bin:\$PATH" >> $BUILD_DIR/.profile.d/bun_buildpack.sh
+cat <<EOF >$BUILD_DIR/.profile.d/bun_buildpack.sh
+export BUN_INSTALL="\$HOME/.bun" 
+export PATH="\$BUN_INSTALL/bin:\$PATH"
+EOF
 
 source $BUILD_DIR/.profile.d/bun_buildpack.sh
 command -v bun
