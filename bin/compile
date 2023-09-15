@@ -12,7 +12,7 @@ curl -fsSL https://bun.sh/install | bash
 echo "-----> Exporting profile environment"
 PROFILE_PATH="$BUILD_DIR/.profile.d/001_bun.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $PROFILE_PATH
+echo 'export PATH="$BUN_INSTALL/bin:\$PATH"' >> $PROFILE_PATH
 
 source $PROFILE_PATH
 command -v bun
