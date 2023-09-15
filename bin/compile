@@ -6,10 +6,11 @@ ENV_DIR=${3:-}
 
 echo "-----> Installing Bun"
 export BUN_INSTALL=$BUILD_DIR/.bun
+export PATH=$BUN_INSTALL/bin:$PATH
 curl -fsSL https://bun.sh/install | bash
 
 echo "-----> Exporting profile environment"
-PROFILE_PATH="$BUILD_DIR/.profile.d/bun.sh"
+PROFILE_PATH="$BUILD_DIR/.profile.d/001_bun.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $PROFILE_PATH
 
