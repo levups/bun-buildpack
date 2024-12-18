@@ -2,7 +2,7 @@
 
 BUILD_DIR=$1
 
-if [ -f $1/bun.lockb ]; then
+if [ -f "$BUILD_DIR"/bun.lock{b,} ]; then
   echo "Bun"
   exit 0
 else
